@@ -13,7 +13,7 @@ class PhoneInfoList extends Component {
         onRemove={ onRemove }
         onUpdate={ onUpdate }
         info={ info }
-        key={ info.id }
+        key={ info.id } // 렌더링을 위해 필요한 키 값 설정
       />
     ));
 
