@@ -3,7 +3,15 @@ import React, { Component } from 'react';
 class ScrollBox extends Component {
   scrollToBottom = () => {
     const { scrollHeight, clientHeight } = this.box;
-    this.box.scrollTop = scrollHeight - clientHeight;
+    let scrollVal = 10;
+    const { box } = this;
+
+    const animate = setInterval(() => {
+      box.scrollTop = box.scrollTop += 10;
+      if (box.scrollTop === scrollHeight - clientHeight) {
+        clearInterval(animate);
+      }
+    }, 10);
   }
 
   render () {
