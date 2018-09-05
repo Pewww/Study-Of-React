@@ -5,6 +5,7 @@ import ValidationSample from './components/ValidationSample';
 import ScrollBox from './components/ScrollBox';
 import IterationSample from './components/IterationSample';
 import IterationComponent from './components/IterationComponent';
+import AddList from './components/AddList';
 import './App.css';
 
 class App extends Component {
@@ -26,10 +27,11 @@ class App extends Component {
         <ScrollBox ref={ ref => this.scrollBox = ref }/>
         <button onClick={ () => this.scrollBox.scrollToBottom() }>
           Scroll To Bottom
-        </button>*/}
+        </button>
         <h2>Simple Iteration1</h2>
         <IterationSample names={ lists } />
-        <IterationComponent yunjaes={ names } />
+        <IterationComponent yunjaes={ names } />*/}
+        <AddList />
       </div>
     );
   }
