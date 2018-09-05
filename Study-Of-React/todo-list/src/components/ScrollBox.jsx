@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 
 class ScrollBox extends Component {
   scrollToBottom = () => {
-    const { scrollHeight, clientHeight } = this.box;
-    let scrollVal = 10;
     const { box } = this;
+    const { scrollHeight, clientHeight } = box;
+    const duration = 10;
 
     const animate = setInterval(() => {
-      box.scrollTop = box.scrollTop += 10;
+      box.scrollTop = box.scrollTop += duration;
       if (box.scrollTop === scrollHeight - clientHeight) {
         clearInterval(animate);
       }
-    }, 10);
+    }, duration);
   }
 
   render () {
+    const myRef = React.createRef();
+
     const style = {
       border: '1px solid #202020',
       width: '300px',
@@ -35,7 +37,7 @@ class ScrollBox extends Component {
         style={ style }
         ref={ ref => this.box = ref }
       >
-        <div style={ innerStyle }></div>
+        <div style={ innerStyle } ref={ myRef }></div>
       </div>
     );
   }

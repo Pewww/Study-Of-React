@@ -3,6 +3,7 @@ import MyComponent from './components/MyComponent';
 import EventPractice from './components/EventPractice';
 import ValidationSample from './components/ValidationSample';
 import ScrollBox from './components/ScrollBox';
+import IterationSample from './components/IterationSample';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
         <button onClick={ () => this.scrollBox.scrollToBottom() }>
           Scroll To Bottom
         </button>
+        <IterationSample />
       </div>
     );
   }
