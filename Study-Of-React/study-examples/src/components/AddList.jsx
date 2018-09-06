@@ -28,6 +28,7 @@ class AddList extends Component {
     
     // 전개 연산자를 이용하여 클릭한 index를 제외한 값들을 배열에 넣어주기
     // splice로 배열을 직접 변경하는 것이 아닌, slice를 이용하여 새로운 배열을 만들어 내는 것
+    // 아니면, filter를 이용해 특정 조건을 만족하는 값들만 추출하여 새로운 배열을 만든다.
 
     this.setState({
       lists: [
@@ -37,12 +38,20 @@ class AddList extends Component {
     });
   }
 
+  removeAnimalFilter = (index) => {
+    const { lists } = this.state;
+
+    this.setState({
+      lists: lists.filter((list, idx) => idx !== index)
+    });
+  }
+
   render () {
     const { animal, lists } = this.state;
     const showLists = lists.map((list, index) => (
       <li
         key={ index }
-        onClick={ () => this.removeAnimal(index) }
+        onClick={ () => this.removeAnimalFilter(index) }
       >
         { list }
       </li>
