@@ -6,6 +6,7 @@ import ScrollBox from './components/ScrollBox';
 import IterationSample from './components/IterationSample';
 import IterationComponent from './components/IterationComponent';
 import AddList from './components/AddList';
+import DerivedCycle from './components/DerivedCycle';
 import './App.css';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
     ];
 
     const names = ['Pewww', 'Caden', 'Yunjae', 'JYJ'];
+    const derivedVal = 'getDerivedStateFromProps Life Cycle Test';
 
     return (
       <div className="App">
@@ -32,6 +34,7 @@ class App extends Component {
         <IterationSample names={ lists } />
         <IterationComponent yunjaes={ names } />*/}
         <AddList />
+        <DerivedCycle propVal={ derivedVal } />
       </div>
     );
   }
