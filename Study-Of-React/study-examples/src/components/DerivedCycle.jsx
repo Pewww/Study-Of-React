@@ -8,7 +8,6 @@ class DerivedCycle extends Component {
   static getDerivedStateFromProps (nextProps, prevState) {
     console.log(nextProps, prevState);
     if (nextProps.propVal !== prevState.value) {
-      console.log(nextProps, prevState);
       return { value: nextProps.propVal };
     }
 
@@ -17,7 +16,7 @@ class DerivedCycle extends Component {
 
   render () {
     return (
-      <div>Hello - { this.state.value }</div>
+      <div>Changed State Value - { this.state.value }</div>
     );
   }
 }
