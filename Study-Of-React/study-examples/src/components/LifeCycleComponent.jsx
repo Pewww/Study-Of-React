@@ -6,6 +6,8 @@ class LifeCycleComponent extends Component {
     color: null
   }
 
+  colorRef = null;
+
   constructor (props) {
     super(props);
     this.colorRef = React.createRef();
@@ -13,8 +15,9 @@ class LifeCycleComponent extends Component {
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
+    console.log('getDerivedStateFromProps');
     if (nextProps.color !== prevState.color) {
-      return { color: prevState.color };
+      return { color: nextProps.color };
     }
 
     return null;
@@ -43,7 +46,9 @@ class LifeCycleComponent extends Component {
 
   getSnapshotBeforeUpdate (prevProps, prevState) {
     console.log('DOM의 변화를 반영하기 바로 직전의 getSnapshotBeforeUpdate');
+    console.log('snapshot: ' + this.colorRef.current.style.color);
     if (prevProps.color !== prevState.color) {
+      console.log('snapshot: ' + this.colorRef.current.style.color);
       return this.colorRef.current.style.color;
     }
 
