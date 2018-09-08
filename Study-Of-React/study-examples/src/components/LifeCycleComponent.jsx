@@ -46,7 +46,6 @@ class LifeCycleComponent extends Component {
 
   getSnapshotBeforeUpdate (prevProps, prevState) {
     console.log('DOM의 변화를 반영하기 바로 직전의 getSnapshotBeforeUpdate');
-    console.log('snapshot: ' + this.colorRef.current.style.color);
     if (prevProps.color !== prevState.color) {
       console.log('snapshot: ' + this.colorRef.current.style.color);
       return this.colorRef.current.style.color;

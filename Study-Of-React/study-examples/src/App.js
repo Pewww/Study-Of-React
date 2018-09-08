@@ -8,6 +8,7 @@ import IterationComponent from './components/IterationComponent';
 import AddList from './components/AddList';
 import DerivedCycle from './components/DerivedCycle';
 import LifeCycleComponent from './components/LifeCycleComponent';
+import FunctionalComponent from './components/FunctionalComponent';
 import './App.css';
 
 function getRandomColor () {
@@ -48,9 +49,10 @@ class App extends Component {
         <IterationSample names={ lists } />
         <IterationComponent yunjaes={ names } />
         <AddList />
-        <DerivedCycle propVal={ derivedVal } />*/}
+        <DerivedCycle propVal={ derivedVal } />
         <button onClick={ this.handleColor }>색 랜덤 변경</button>
-        <LifeCycleComponent color={ this.state.color } />
+        <LifeCycleComponent color={ this.state.color } />*/}
+        <FunctionalComponent name="functional" />
       </div>
     );
   }
