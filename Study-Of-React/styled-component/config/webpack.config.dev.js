@@ -192,6 +192,49 @@ module.exports = {
               },
             ],
           },
+          {
+            test: /\.scss$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  // 아래 2가지가 변경된 부분
+                  // css module 활성화 및, 고유하게 생성되는 클래스네임 형식 결정
+                  modules: true,
+                  localIdentName: '[path][name]__local--[hash:base64:5]'
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677  
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
+              },
+              // sass-loader 추가 부분
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  // 추후 작성
+                }
+              }
+            ],
+          },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.

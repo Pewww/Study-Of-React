@@ -205,6 +205,13 @@ module.exports = {
                         ],
                       },
                     },
+                    // 상대 경로를 간소화 - 파일명으로 접근할 수 있도록 함
+                    {
+                      loader: require.resolve('sass-loader'),
+                      options: {
+                        includePaths: [paths.styles]
+                      }
+                    }
                   ],
                 },
                 extractTextPluginOptions
