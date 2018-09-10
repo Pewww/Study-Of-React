@@ -230,7 +230,7 @@ module.exports = {
               {
                 loader: require.resolve('sass-loader'),
                 options: {
-                  // 추후 작성
+                  includePaths: [paths.styles]
                 }
               }
             ],

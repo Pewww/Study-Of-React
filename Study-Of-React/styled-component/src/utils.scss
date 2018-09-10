@@ -1,3 +1,16 @@
+@import '~open-color/open-color';
+@import '~include-media/dist/include-media';
+// include-media 라이브러리 기억할 것
+
+$breakpoints: (
+  mobile: 376px,
+  tablet: 768px,
+  pad: 1024px,
+  computer: 1200px
+);
+
+$size: 100px;
+
 @mixin place-center () {
   top: 50%;
   left: 50%;

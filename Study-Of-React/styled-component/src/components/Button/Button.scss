@@ -1,0 +1,48 @@
+@import '../../utils';
+
+.button {
+  background-color: $oc-green-7;
+  transition: all .2s ease-in;
+  display: inline-block;
+  padding: {
+    top: 2rem;
+    bottom: 2rem;
+  };
+  text-align: center;
+  color: white;
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+
+  @include place-center();
+
+  width: 1200px;
+
+  @include media('<computer') {
+    width: 1024px;
+  }
+
+  @include media('<pad') {
+    width: 768px;
+  }
+
+  @include media('<tablet') {
+    width: 90%;
+  }
+
+  @include media('<mobile') {
+    width: 50%;
+    height: 100%;
+  }
+
+  &:hover {
+    background-color: $oc-green-6;
+  }
+
+  &:active {
+    margin-top: 3px;
+    background-color: $oc-green-8;
+  }
+}
