@@ -1,0 +1,31 @@
+.todo-list {
+  position: relative;
+  height: 2.8rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .03);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.todo-list:first-of-type {
+  margin-top: 1rem;
+}
+
+.todo-text {
+  padding-left: 1rem;
+}
+
+.test {
+  text-decoration: line-through;
+}
+
+.todo-delete {
+  font-size: 1.3rem;
+  position: absolute;
+  right: 1rem;
+  font-weight: 800;
+  color: #f4586d;
+  cursor: pointer;
+}

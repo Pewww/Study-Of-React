@@ -1,0 +1,27 @@
+.input-cover {
+  width: 90%;
+  height: 2.5rem;
+  margin: 0 auto;
+}
+
+.todo-input {
+  width: calc(100% - 2.5rem);
+  height: 2.5rem;
+  border: 0;
+  border-bottom: 1px solid #d6d6d6;
+  padding-left: 0.8rem;
+  position: relative;
+  top: -1px;
+}
+
+.todo-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  background: linear-gradient(to right, rgb(86, 42, 187), rgb(105, 51, 150));
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  vertical-align: middle;
+}
