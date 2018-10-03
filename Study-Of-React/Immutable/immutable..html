@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Learn about Immutable</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.js"></script>
+  </head>
+  <body>
+    <script>
+      const {
+        Map,
+        List
+      } = Immutable;
+
+      let testObj = Map({
+        a: 3,
+        b: 4,
+        c: Map({
+          d: 5,
+          e: 6
+        })
+      });
+      
+      // nested Object에 설정
+      let newData = testObj.setIn(['c', 'f'], 66);
+      console.log(newData.toJS());
+      
+      // 여러개 설정
+      let newData2 = testObj.set('a', Map({
+        hello: 'world',
+        good: 'bye'
+      }));
+      console.log(newData2.toJS());
+
+      // 수정
+      let newData3 = testObj.merge({
+        a: 10,
+        b: 20
+      });
+      console.log(newData3.toJS());
+
+      let newData4 = testObj.mergeIn('c', {
+        d: 10,
+        e: 20
+      });
+      console.log(newData4.toJS());
+      
+      const testArr = List([
+        'hello',
+        'my',
+        'name',
+        'is'
+      ]);
+      console.log(testArr.toJS());
+
+      let newArr = testArr.push('pewww');
+      console.log(newArr.toJS());
+
+      let newArr2 = testArr.push(Map({
+        name: 'pewww',
+        age: 19,
+        gender: 'male'
+      }));
+      console.log(newArr2.toJS());
+
+      let newArr3 = testArr.unshift('Let me introduce myself!');
+      console.log(newArr3.toJS());
+
+      // let newArr4 = testArr.delete(0);
+      let newArr4 = testArr.pop();
+      console.log(newArr4.toJS());
+    </script>
+  </body>
+</html>

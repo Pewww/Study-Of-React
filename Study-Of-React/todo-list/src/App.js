@@ -4,14 +4,20 @@ import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import './App.scss';
 
+// 임시 데이터
+const testDatas = new Array(500).fill(0).map((foo, index) => (
+  {
+    id: index,
+    text: `일정 ${ index }`,
+    done: false,
+  }
+));
+
 class App extends Component {
   state = {
     input: '', // 인풋의 값
     // 일정 데이터 초기값
-    todos: [
-      { id:0, text: '리액트 공부하기', done: true },
-      { id:1, text: '컴포넌트 스타일링 해보기', done: false }
-    ]
+    todos: testDatas,
   }
 
   // 일정 데이터 안에 들어가는 id 값
@@ -32,17 +38,18 @@ class App extends Component {
     const { todos, input } = this.state;
 
     // 새 데이터 객체 생성
-    const newTodo = {
-      text: input,
-      done: false,
-      id: this.getId()
-    };
-    
-    // 배열 안에 새 데이터를 집어넣습니다.
-    this.setState({
-      todos: [...todos, newTodo],
-      input: ''
-    });
+    if (input !== '') {
+      const newTodo = {
+        text: input,
+        done: false,
+        id: this.getId()
+      };
+
+      this.setState({
+        todos: [...todos, newTodo],
+        input: ''
+      });
+    }
   }
 
   // 투두아이템 토글하기
