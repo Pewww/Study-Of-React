@@ -68,6 +68,24 @@
       // let newArr4 = testArr.delete(0);
       let newArr4 = testArr.pop();
       console.log(newArr4.toJS());
+
+      let testObj2 = Map({
+        a: 1,
+        b: Map({
+          c: 2,
+          d: Map({
+            e: 5
+          })
+        })
+      });
+
+      console.log(testObj2.getIn(['b', 'd', 'e']));
+
+      let newObj = testObj2.setIn(['b', 'd', 'e'], Map({
+        f: 10,
+        g: 20
+      }));
+      console.log(newObj.toJS());
     </script>
   </body>
 </html>
