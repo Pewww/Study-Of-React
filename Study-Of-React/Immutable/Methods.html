@@ -1,0 +1,16 @@
+<html><head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.js"></script>
+</head><body>
+  <script>
+    const { Map, List, fromJS } = Immutable;
+
+    const arr = List([1, 2, 3, 4, 5]);
+    const arr2 = arr.push(6);
+    const arr3 = arr.push(Map({ a: 1, b: 2, c: 3 }));
+    const arr4 = arr.delete(0);
+
+    console.log(arr2.toJS());
+    console.log(arr3.toJS());
+    console.log(arr4.toJS(), arr4.size);
+  </script>
+</body></html>

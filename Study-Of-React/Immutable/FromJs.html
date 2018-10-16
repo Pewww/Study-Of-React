@@ -1,0 +1,24 @@
+<html><head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.js"></script>
+</head><body>
+  <script>
+    const { Map, fromJS } = Immutable;
+
+    const obj1 = fromJS({
+      a: 1,
+      b: 2,
+      c: {
+        d: 3,
+        e: 4,
+        f: {
+          g: 5,
+          h: 6
+        }
+      }
+    });
+
+    const obj2 = obj1.setIn(['c', 'f', 'h'], 1000);
+
+    console.log(obj2.toJS());
+  </script>
+</body></html>

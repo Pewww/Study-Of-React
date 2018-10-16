@@ -1,0 +1,27 @@
+<html><head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.js"></script>
+</head><body>
+  <script>
+    const { Map, List, fromJS } = Immutable;
+
+    const arr = fromJS([
+      {
+        value: 1,
+        name: 'hello'
+      },
+      {
+        value: 2,
+        name: 'pewww'
+      },
+      {
+        value: 5,
+        name: 'wow'
+      }
+    ]);
+
+    const changedArr = arr.map(item =>
+    item.set('value', item.get('value') * 5));
+
+    console.log(changedArr.toJS());
+  </script>
+</body></html>

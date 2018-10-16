@@ -1,0 +1,43 @@
+<html><head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.js"></script>
+</head><body>
+  <script>
+    const { List, Map, fromJS } = Immutable;
+
+    const obj1 = List([
+      Map({
+        a: 1,
+        b: 2,
+        c: Map({
+          d: 4,
+          e: 5
+        }),
+        f: List([
+          1, 2, 3, 4, 5
+        ])
+      }),
+      Map({
+        g: List(['str', 'ing', 'type', 'is', 'hello'])
+      })
+    ]);
+
+    const obj2 = fromJS([
+      {
+        a: 1,
+        b: 2,
+        c: {
+          d: 4,
+          e: 5
+        },
+        f: [1, 2, 3, 4, 5]
+      },
+      {
+        g: ['str', 'ing', 'type', 'is', 'hello']
+      }
+    ]);
+
+    console.log(obj1.toJS());
+    console.log(obj2.toJS());
+    console.log(obj2.getIn([0, 'a']));
+  </script>
+</body></html>
