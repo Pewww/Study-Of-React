@@ -16,18 +16,19 @@ class TodoInputContainer extends Component {
   handleChange = ({ target }) => {
     const { value } = target;
     const { InputActions } = this.props;
+
     InputActions.setInput(value);
   }
 
   handleInsert = () => {
-    const { InputActions, TodoActions, value } = this.props;
+    const { InputActions, TodosActions, value } = this.props;
     const todo = {
       id: this.getId(),
       text: value,
       done: false
     };
 
-    TodoActions.insert(todo);
+    TodosActions.insert(todo);
     InputActions.setInput('');
   }
 

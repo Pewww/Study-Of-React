@@ -1,5 +1,5 @@
 import { Map, List } from 'immutable';
-import { handleAction, createAction } from 'redux-actions';
+import { handleActions, createAction } from 'redux-actions';
 
 const INSERT = 'todos/INSERT';
 const TOGGLE = 'todos/TOGGLE';
@@ -22,7 +22,7 @@ const initialState = List([
   })
 ]);
 
-export default handleAction({
+export default handleActions({
   [INSERT]: (state, action) => {
     const { id, text, done } = action.payload;
 
@@ -42,4 +42,4 @@ export default handleAction({
 
     return state.delete(todo);
   }
-});
+}, initialState);

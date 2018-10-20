@@ -1,0 +1,43 @@
+.todo-input {
+  border-top: 1px solid #c6c6c6;
+  border-bottom: 1px solid #c6c6c6;
+  display: flex;
+  padding: 1rem;
+}
+
+todo-input input {
+  flex: 1;
+  font-size: 1rem;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #c6c6c6;
+  padding-left: 0.5rem;
+}
+
+todo-input input:focus {
+  border-bottom: 1px solid #c6c6c6;
+}
+
+todo-input .add-button {
+  width: 5rem;
+  height: 2rem;
+  margin-left: 1rem;
+  border: 1px solid rgb(115, 190, 115);
+  color: rgb(115, 190, 115);
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .25s;
+  cursor: pointer;
+}
+
+todo-input .add-button:hover {
+  background-color: rgb(68, 160, 68);
+  color: #fff;
+}
+
+todo-input .add-button:active {
+  background-color: rgb(41, 121, 41);
+}
