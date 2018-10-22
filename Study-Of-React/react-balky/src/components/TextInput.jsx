@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import './TextInput.css';
 
 class TextInput extends Component {
   render () {
@@ -10,7 +9,7 @@ class TextInput extends Component {
         <input
           type="text"
           className="text-input"
-          placeholder="텍스트를 입력해주세요."
+          placeholder="찾을 텍스트를 입력해주세요."
           value={ input }
           onChange={ inputChange }
         />
