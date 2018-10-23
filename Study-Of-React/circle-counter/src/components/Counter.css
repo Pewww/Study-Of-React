@@ -1,0 +1,14 @@
+.counter-cover {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-cover > span {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+}
