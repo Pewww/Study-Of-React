@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import getRandomColor from '../utils/getRandomColor';
 
 const mapStateToProps = (state) => ({
-  number: state.number,
-  color: state.color
+  number: state.combinedNumber.number,
+  color: state.combinedColor.color
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const CircleCounterContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps 
 )(Counter);
 
 export default CircleCounterContainer;

@@ -1,32 +1,10 @@
-import * as types from '../actions/ActionTypes';
+import color from './color';
+import number from './number';
+import { combineReducers } from 'redux';
 
-const initialState = {
-  number: 0,
-  color: 'black'
-};
+const reducers = combineReducers({
+  combinedColor: color,
+  combinedNumber: number
+});
 
-function circleCounter (state = initialState, action) {
-  switch (action.type) {
-    case types.INCREMENT:
-      return {
-        ...state,
-        number: state.number + 1
-      };
-    
-    case types.DECREMENT:
-      return {
-        ...state,
-        number: state.number - 1
-      };
-
-    case types.SET_COLOR:
-      return {
-        ...state,
-        color: action.color
-      };
-    
-    default: return state;
-  }
-}
-
-export default circleCounter;
+export default reducers;
