@@ -1,0 +1,3 @@
+Redux를 위한 스토어 생성 코드 기억
+
+createStore(reducers, window.devToolsExtension && window.devToolsExtension());
